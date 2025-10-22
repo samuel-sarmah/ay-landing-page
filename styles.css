@@ -212,11 +212,15 @@ body {
     box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
     line-height: 0;
     font-size: 0;
+    min-height: 500px;
+    display: flex;
+    align-items: stretch;
 }
 
 .hero-medical-img {
     width: 100%;
-    height: 400px;
+    height: 100%;
+    min-height: 500px;
     object-fit: cover;
     border-radius: 24px;
     display: block;
@@ -1262,10 +1266,12 @@ body {
     .medical-hero-image {
         order: -1;
         margin-bottom: 1rem;
+        min-height: 280px;
     }
     
     .hero-medical-img {
         height: 280px;
+        min-height: 280px;
     }
     
     .healthcare-scene {
@@ -1486,6 +1492,11 @@ body {
     
     .hero-medical-img {
         height: 220px;
+        min-height: 220px;
+    }
+    
+    .medical-hero-image {
+        min-height: 220px;
     }
     
     .healthcare-scene {
