@@ -27,33 +27,64 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-content">
+                        <div class="hero-content">
                 <h1 class="hero-title">
-                    Transform Healthcare with 
-                    <span class="highlight">Ayenyo AI</span>
+                    Transform Healthcare Research with <span class="gradient-text">AI-Powered Intelligence</span>
                 </h1>
                 <p class="hero-subtitle">
-                    Revolutionizing medical research and decision-making with intelligent AI assistance. 
-                    Empowering healthcare providers and government agencies with cutting-edge technology for better patient outcomes.
+                    Ayenyo AI empowers healthcare providers and governments with advanced medical research capabilities, 
+                    delivering evidence-based insights in seconds.
                 </p>
                 <div class="hero-actions">
-                    <button class="primary-button" data-action="demo">Schedule Demo</button>
-                    <button class="secondary-button" data-action="learn">Learn More</button>
+                    <button class="primary-button" data-action="demo">
+                        Get Started Free
+                        <span class="button-icon">→</span>
+                    </button>
+                    <button class="secondary-button" data-action="contact">
+                        Schedule Demo
+                        <span class="button-icon">📅</span>
+                    </button>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Accuracy Rate</span>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Research Papers Analyzed</div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">50k+</span>
-                        <span class="stat-label">Research Papers</span>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Accuracy Rate</div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Availability</span>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">AI Assistance</div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="medical-hero-image">
+                <img src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                     alt="Doctor using AI technology for medical research" 
+                     class="hero-medical-img"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="image-fallback" style="display:none;">
+                    <div class="healthcare-scene">
+                        <div class="scene-header">
+                            <div class="hospital-icon">🏥</div>
+                            <div class="ai-badge">✨ AI-Powered</div>
+                        </div>
+                        <div class="doctor-avatars">
+                            <div class="doctor-avatar">👨‍⚕️</div>
+                            <div class="doctor-avatar">👩‍⚕️</div>
+                            <div class="doctor-avatar">👨‍🔬</div>
+                        </div>
+                        <div class="mini-stats">
+                            <div class="mini-stat">⏱️ 24/7 Available</div>
+                            <div class="mini-stat">✅ 95% Accuracy</div>
+                            <div class="mini-stat">📊 50K+ Papers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="confidence-badge">🔒 HIPAA Compliant</div>
             </div>
             <div class="hero-visual">
                 <div class="medical-hero-visual">
@@ -188,18 +219,23 @@
                     </div>
                 </div>
                 <div class="benefits-visual">
-                    <div class="ayenyo-usage-visual">
-                        <div class="usage-device">
-                            <div class="device-header">
-                                <div class="device-camera"></div>
-                                <div class="device-speaker"></div>
-                            </div>
-                            <div class="device-screen">
-                                <div class="screen-header">
-                                    <span class="app-icon">🤖</span>
-                                    <span class="app-name">Ayenyo AI Assistant</span>
-                                    <span class="status-dot"></span>
+                    <div class="ayenyo-usage-image">
+                        <img src="https://images.pexels.com/photos/4386464/pexels-photo-4386464.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                             alt="Healthcare professional using Ayenyo AI assistant" 
+                             class="usage-img"
+                             onerror="this.style.display='none'; this.parentElement.querySelector('.image-fallback').style.display='block';">
+                        <div class="image-fallback" style="display:none;">
+                            <div class="usage-device">
+                                <div class="device-header">
+                                    <div class="device-camera"></div>
+                                    <div class="device-speaker"></div>
                                 </div>
+                                <div class="device-screen">
+                                    <div class="screen-header">
+                                        <span class="app-icon">🤖</span>
+                                        <span class="app-name">Ayenyo AI</span>
+                                        <span class="status-dot"></span>
+                                    </div>
                                 <div class="screen-content">
                                     <div class="user-query">
                                         <div class="query-icon">👨‍⚕️</div>
@@ -219,15 +255,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="usage-badge-overlay">
-                            <span class="usage-icon">💡</span>
-                            <span class="usage-text">Ayenyo AI in Action</span>
                         </div>
-                    </div>
                         <div class="usage-overlay">
                             <div class="usage-badge">
                                 <span class="usage-icon">🤖</span>
-                                <span class="usage-text">Ayenyo AI in Action</span>
+                                <span class="usage-text">AI-Powered Analysis</span>
                             </div>
                         </div>
                     </div>
@@ -257,9 +289,15 @@
             <p class="section-subtitle">Healthcare experts worldwide rely on Ayenyo for critical decision support</p>
             <div class="trust-grid">
                 <div class="trust-item">
-                    <div class="trust-avatar">
-                        <div class="avatar-icon">👩‍⚕️</div>
-                        <div class="avatar-badge">MD</div>
+                    <div class="trust-image">
+                        <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                             alt="Dr. Sarah Chen, MD" 
+                             class="trust-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="trust-avatar" style="display:none;">
+                            <div class="avatar-icon">👩‍⚕️</div>
+                            <div class="avatar-badge">MD</div>
+                        </div>
                     </div>
                     <div class="trust-content">
                         <h4>Dr. Sarah Chen, MD</h4>
@@ -268,9 +306,15 @@
                     </div>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-avatar">
-                        <div class="avatar-icon">👨‍🔬</div>
-                        <div class="avatar-badge">PhD</div>
+                    <div class="trust-image">
+                        <img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                             alt="Dr. Michael Rodriguez, PhD" 
+                             class="trust-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="trust-avatar" style="display:none;">
+                            <div class="avatar-icon">👨‍🔬</div>
+                            <div class="avatar-badge">PhD</div>
+                        </div>
                     </div>
                     <div class="trust-content">
                         <h4>Dr. Michael Rodriguez, PhD</h4>
@@ -279,9 +323,15 @@
                     </div>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-avatar">
-                        <div class="avatar-icon">👩‍💼</div>
-                        <div class="avatar-badge">MPH</div>
+                    <div class="trust-image">
+                        <img src="https://images.pexels.com/photos/4173239/pexels-photo-4173239.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" 
+                             alt="Dr. Emily Johnson, MPH" 
+                             class="trust-img"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="trust-avatar" style="display:none;">
+                            <div class="avatar-icon">👩‍💼</div>
+                            <div class="avatar-badge">MPH</div>
+                        </div>
                     </div>
                     <div class="trust-content">
                         <h4>Dr. Emily Johnson, MPH</h4>

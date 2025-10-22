@@ -204,18 +204,125 @@ body {
     margin-bottom: 2rem;
 }
 
-.healthcare-scene {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow-xl), 0 0 40px rgba(59, 130, 246, 0.2);
-    border: 2px solid rgba(59, 130, 246, 0.2);
-    transition: all 0.3s ease;
+/* Medical Hero Image Styling */
+.medical-hero-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
 }
 
-.healthcare-scene:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl), 0 0 60px rgba(59, 130, 246, 0.3);
+.hero-medical-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+}
+
+.image-fallback {
+    width: 100%;
+    min-height: 400px;
+}
+
+.healthcare-scene {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+    border-radius: 24px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.healthcare-scene::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    animation: float 6s ease-in-out infinite;
+}
+
+.scene-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1;
+}
+
+.hospital-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--vibrant-purple) 100%);
+    padding: 1rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    animation: pulse-green 3s ease-in-out infinite;
+}
+
+.doctor-avatars {
+    display: flex;
+    gap: 1rem;
+    z-index: 1;
+}
+
+.doctor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+    border: 3px solid var(--bright-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin: 0 -10px;
+}
+
+.doctor-avatar:hover {
+    transform: translateY(-5px) scale(1.1);
+    z-index: 10;
+}
+
+.ai-badge {
+    background: var(--gradient-secondary);
+    color: var(--bright-white);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    z-index: 1;
+}
+
+.mini-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+}
+
+.mini-stat {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 .scene-header {
@@ -832,6 +939,43 @@ body {
     background-clip: text;
 }
 
+/* Ayenyo Usage Real Image Styling */
+.ayenyo-usage-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+}
+
+.usage-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+}
+
+.usage-overlay {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 2;
+}
+
+.usage-badge {
+    background: var(--gradient-secondary);
+    color: var(--bright-white);
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 /* Medical Professionals Trust Section */
 .medical-trust {
     padding: var(--section-padding);
@@ -874,6 +1018,19 @@ body {
 .trust-item:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-xl), 0 0 40px rgba(16, 185, 129, 0.2);
+}
+
+.trust-image {
+    flex-shrink: 0;
+}
+
+.trust-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bright-green);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 .trust-avatar {
@@ -1098,6 +1255,15 @@ body {
         gap: 2rem;
     }
     
+    .medical-hero-image {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-medical-img {
+        height: 280px;
+    }
+    
     .healthcare-scene {
         order: -1;
         margin-bottom: 1rem;
@@ -1234,6 +1400,16 @@ body {
         padding: 1.5rem;
     }
     
+    .trust-image {
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+    
+    .trust-img {
+        width: 70px;
+        height: 70px;
+    }
+    
     .trust-avatar {
         align-self: center;
         margin-bottom: 1rem;
@@ -1304,6 +1480,10 @@ body {
         font-size: 1rem;
     }
     
+    .hero-medical-img {
+        height: 220px;
+    }
+    
     .healthcare-scene {
         padding: 1.5rem;
     }
@@ -1327,6 +1507,10 @@ body {
         font-size: 0.75rem;
     }
     
+    .usage-img {
+        height: 200px;
+    }
+    
     .section-title {
         font-size: 1.75rem;
     }
@@ -1347,6 +1531,11 @@ body {
         padding: 1.25rem;
     }
     
+    .trust-img {
+        width: 60px;
+        height: 60px;
+    }
+    
     .trust-avatar {
         width: 60px;
         height: 60px;
@@ -1364,6 +1553,10 @@ body {
     
     .device-screen {
         padding: 0.75rem;
+    }
+    
+    .usage-img {
+        height: 250px;
     }
     
     .trust-content h4 {
