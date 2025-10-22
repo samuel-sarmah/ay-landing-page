@@ -292,14 +292,14 @@ body {
 
 /* AI Interface in Hero */
 .ai-interface-hero {
-    background: var(--clean-white);
-    border-radius: 16px;
-    box-shadow: var(--shadow-lg);
-    padding: 3rem;
-    border: 1px solid rgba(0, 102, 204, 0.08);
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 102, 204, 0.15), 0 0 1px rgba(0, 102, 204, 0.1);
+    padding: 3.5rem;
+    border: 2px solid rgba(0, 102, 204, 0.12);
     position: relative;
     overflow: hidden;
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
     transition: var(--transition-smooth);
 }
@@ -310,79 +310,104 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
+    height: 6px;
     background: var(--gradient-medical);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+}
+
+.ai-interface-hero::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -40%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 102, 204, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .ai-interface-hero .interface-header {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(0, 102, 204, 0.08);
-    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .ai-interface-hero .interface-title {
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.3rem;
     color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
 .ai-interface-hero .interface-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
 }
 
 /* Query Section Styles */
 .query-section {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .query-input-wrapper {
     display: flex;
     gap: 0.75rem;
     align-items: stretch;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.12);
+    border-radius: 10px;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 102, 204, 0.15);
 }
 
 .query-input {
     flex: 1;
-    padding: 1rem 1.25rem;
-    border: 1px solid rgba(0, 102, 204, 0.2);
+    padding: 1.1rem 1.5rem;
+    border: none;
     border-radius: 8px;
     font-size: 1rem;
     font-family: inherit;
-    background: var(--clean-white);
+    background: transparent;
     color: var(--text-primary);
     transition: all 0.3s ease;
 }
 
 .query-input:focus {
     outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.08);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .query-input::placeholder {
     color: var(--soft-gray);
+    font-weight: 500;
 }
 
 .query-submit-btn {
-    padding: 1rem 1.75rem;
+    padding: 1.1rem 2rem;
     background: var(--primary-blue);
     color: var(--clean-white);
     border: none;
     border-radius: 8px;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: all 0.3s ease;
+    transition: var(--transition-normal);
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
 }
 
 .query-submit-btn:hover {
@@ -406,7 +431,7 @@ body {
 .example-queries {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.75rem;
     align-items: center;
 }
 
@@ -417,21 +442,22 @@ body {
 }
 
 .example-query {
-    padding: 0.5rem 0.9rem;
-    background: rgba(139, 92, 246, 0.08);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    padding: 0.6rem 1.1rem;
+    background: rgba(0, 102, 204, 0.08);
+    border: 1px solid rgba(0, 102, 204, 0.25);
     border-radius: 20px;
     font-size: 0.85rem;
-    color: var(--vibrant-purple);
+    color: var(--primary-blue);
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 500;
 }
 
 .example-query:hover {
-    background: rgba(139, 92, 246, 0.15);
-    border-color: var(--vibrant-purple);
-    transform: translateY(-1px);
+    background: rgba(0, 102, 204, 0.15);
+    border-color: var(--primary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
 }
 
 /* Response Section Styles */
