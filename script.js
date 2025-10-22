@@ -1,4 +1,4 @@
-// Medical AI Research Assistant Landing Page JavaScript
+// Ayenyo AI Landing Page JavaScript
 // Minimal interactions and smooth user experience enhancements
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -102,9 +102,9 @@ function handleDemoRequest() {
     // Create a simple modal or redirect - for now, show alert
     const email = prompt('Enter your email address to schedule a demo:');
     if (email && validateEmail(email)) {
-        showNotification('Demo request submitted! We\'ll contact you within 24 hours.', 'success');
+        showNotification('Demo request submitted! Our Ayenyo team will contact you within 24 hours.', 'success');
         // In a real implementation, this would send data to your backend
-        console.log('Demo requested for:', email);
+        console.log('Ayenyo demo requested for:', email);
     } else if (email) {
         showNotification('Please enter a valid email address.', 'error');
     }
@@ -127,8 +127,8 @@ function handleLearnMore() {
 function handleContactSales() {
     const email = prompt('Enter your email address to contact our sales team:');
     if (email && validateEmail(email)) {
-        showNotification('Sales contact request submitted! Expect a call within 2 hours.', 'success');
-        console.log('Sales contact requested for:', email);
+        showNotification('Sales contact request submitted! Our Ayenyo sales team will call within 2 hours.', 'success');
+        console.log('Ayenyo sales contact requested for:', email);
     } else if (email) {
         showNotification('Please enter a valid email address.', 'error');
     }
@@ -337,5 +337,6 @@ const debouncedScroll = debounce(() => {
 window.addEventListener('scroll', debouncedScroll);
 
 // Console welcome message for developers
-console.log('%c🏥 MedAI Research Assistant', 'color: #2563eb; font-size: 16px; font-weight: bold;');
-console.log('Interested in our technology? Contact us at info@medai-research.com');
+console.log('%c✨ Ayenyo AI', 'color: #3b82f6; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);');
+console.log('%cTransforming healthcare through intelligent AI assistance', 'color: #8b5cf6; font-size: 14px;');
+console.log('Interested in our technology? Contact us at hello@ayenyo.com');
