@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initButtonInteractions();
     initNavigationEffects();
     initAnimations();
+    initAIInterface();
 });
 
 // Smooth scroll effects and navigation highlighting
@@ -340,3 +341,120 @@ window.addEventListener('scroll', debouncedScroll);
 console.log('%c✨ Ayenyo AI', 'color: #3b82f6; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);');
 console.log('%cTransforming healthcare through intelligent AI assistance', 'color: #8b5cf6; font-size: 14px;');
 console.log('Interested in our technology? Contact us at hello@ayenyo.com');
+
+// AI Interface Interactive Demo
+function initAIInterface() {
+    const queryInput = document.getElementById('aiQueryInput');
+    const submitBtn = document.getElementById('submitQuery');
+    const exampleQueries = document.querySelectorAll('.example-query');
+    const responseSection = document.getElementById('responseSection');
+    const analyzingState = document.getElementById('analyzingState');
+    const responseResult = document.getElementById('responseResult');
+    const resultSummary = document.getElementById('resultSummary');
+    const researchInsights = document.getElementById('researchInsights');
+    
+    // Sample responses for different query types
+    const sampleResponses = {
+        'diabetes': {
+            summary: 'Analyzing 1,247 recent studies on diabetes management and cardiovascular health...',
+            insights: [
+                'SGLT-2 inhibitors show 23% reduction in cardiovascular events',
+                'GLP-1 agonists demonstrate superior weight management outcomes',
+                'Recent meta-analysis supports combination therapy approach',
+                'Continuous glucose monitoring improves HbA1c by 0.5-0.7%'
+            ]
+        },
+        'cardiac': {
+            summary: 'Analyzing 892 recent studies on post-operative cardiac care protocols...',
+            insights: [
+                'Early mobilization reduces complications by 34%',
+                'Enhanced recovery protocols shorten hospital stays',
+                'Multimodal pain management improves patient outcomes',
+                'Remote monitoring systems reduce readmission rates'
+            ]
+        },
+        'cancer': {
+            summary: 'Analyzing 1,563 recent studies on melanoma immunotherapy advances...',
+            insights: [
+                'Combination checkpoint inhibitors show 58% response rates',
+                'Personalized neoantigen vaccines improve outcomes',
+                'Biomarker-driven treatment selection enhances efficacy',
+                'Novel CAR-T approaches demonstrate promising results'
+            ]
+        },
+        'default': {
+            summary: 'Analyzing relevant medical research papers across multiple databases...',
+            insights: [
+                'Evidence-based treatment protocols identified',
+                'Latest clinical trial results incorporated',
+                'Expert consensus guidelines reviewed',
+                'Peer-reviewed meta-analyses analyzed'
+            ]
+        }
+    };
+    
+    // Handle example query clicks
+    exampleQueries.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const query = this.getAttribute('data-query');
+            queryInput.value = query;
+            queryInput.focus();
+        });
+    });
+    
+    // Handle query submission
+    function handleQuerySubmit() {
+        const query = queryInput.value.trim();
+        
+        if (!query) {
+            queryInput.focus();
+            return;
+        }
+        
+        // Hide placeholder and show analyzing state
+        const placeholder = responseSection.querySelector('.response-placeholder');
+        const responseContent = responseSection.querySelector('.response-content');
+        
+        placeholder.style.display = 'none';
+        responseContent.style.display = 'block';
+        analyzingState.style.display = 'block';
+        responseResult.style.display = 'none';
+        
+        // Simulate API call with delay
+        setTimeout(() => {
+            // Determine response type based on query
+            let responseType = 'default';
+            if (query.toLowerCase().includes('diabetes')) responseType = 'diabetes';
+            else if (query.toLowerCase().includes('cardiac') || query.toLowerCase().includes('surgery')) responseType = 'cardiac';
+            else if (query.toLowerCase().includes('cancer') || query.toLowerCase().includes('melanoma') || query.toLowerCase().includes('immunotherapy')) responseType = 'cancer';
+            
+            const response = sampleResponses[responseType];
+            
+            // Update response content
+            resultSummary.textContent = response.summary;
+            researchInsights.innerHTML = response.insights
+                .map(insight => `<div class="insight">✓ ${insight}</div>`)
+                .join('');
+            
+            // Show result
+            analyzingState.style.display = 'none';
+            responseResult.style.display = 'block';
+            
+            // Add ripple effect to submit button
+            submitBtn.classList.add('success-pulse');
+            setTimeout(() => submitBtn.classList.remove('success-pulse'), 600);
+            
+        }, 1500); // 1.5 second delay for realism
+    }
+    
+    // Submit button click
+    submitBtn.addEventListener('click', handleQuerySubmit);
+    
+    // Enter key submission
+    queryInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            handleQuerySubmit();
+        }
+    });
+}
+

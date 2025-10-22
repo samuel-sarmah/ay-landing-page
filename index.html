@@ -65,8 +65,8 @@
             
             <!-- Right Column: Medical Image -->
             <div class="medical-hero-image">
-                <img src="https://images.pexels.com/photos/8376299/pexels-photo-8376299.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=2" 
-                     alt="Doctor reviewing medical research and patient data" 
+                <img src="https://images.pexels.com/photos/2881229/pexels-photo-2881229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&dpr=2" 
+                     alt="DNA structure and medical data on computer screen showing AI technology integration" 
                      class="hero-medical-img"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                 <div class="image-fallback" style="display:none;">
@@ -96,20 +96,44 @@
             <div class="ai-interface-hero">
                 <div class="interface-header">
                     <span class="status-indicator active"></span>
-                    <span class="interface-title">Ayenyo AI Assistant</span>
+                    <span class="interface-title">Try Ayenyo AI Assistant</span>
                 </div>
                 <div class="interface-content">
-                    <div class="query-example">
-                        <div class="query-label">Ask Anything</div>
-                        <p>"Latest treatments for Type 2 diabetes with cardiovascular comorbidities"</p>
+                    <div class="query-section">
+                        <div class="query-label">Ask Your Medical Research Question</div>
+                        <div class="query-input-wrapper">
+                            <input type="text" 
+                                   class="query-input" 
+                                   id="aiQueryInput"
+                                   placeholder="e.g., Latest treatments for Type 2 diabetes with cardiovascular comorbidities..."
+                                   value="">
+                            <button class="query-submit-btn" id="submitQuery">
+                                <span class="btn-text">Analyze</span>
+                                <span class="btn-icon">🔬</span>
+                            </button>
+                        </div>
+                        <div class="example-queries">
+                            <span class="example-label">Try examples:</span>
+                            <button class="example-query" data-query="Latest treatments for Type 2 diabetes with cardiovascular comorbidities">Diabetes treatments</button>
+                            <button class="example-query" data-query="Best practices for post-operative care in cardiac surgery patients">Cardiac surgery care</button>
+                            <button class="example-query" data-query="Recent advances in immunotherapy for melanoma">Cancer immunotherapy</button>
+                        </div>
                     </div>
-                    <div class="response-preview">
+                    <div class="response-preview" id="responseSection">
                         <div class="response-label">AI Response</div>
-                        <p>Analyzing 1,247 recent studies...</p>
-                        <div class="research-insights">
-                            <div class="insight">✓ SGLT-2 inhibitors show 23% reduction in cardiovascular events</div>
-                            <div class="insight">✓ GLP-1 agonists demonstrate superior weight management</div>
-                            <div class="insight">✓ Recent meta-analysis supports combination therapy</div>
+                        <div class="response-placeholder">
+                            <div class="placeholder-icon">🤖</div>
+                            <p>Enter a medical research question to see AI-powered analysis...</p>
+                        </div>
+                        <div class="response-content" style="display: none;">
+                            <div class="analyzing-state" id="analyzingState" style="display: none;">
+                                <div class="loading-spinner"></div>
+                                <p>Analyzing research papers...</p>
+                            </div>
+                            <div class="response-result" id="responseResult" style="display: none;">
+                                <p class="result-summary" id="resultSummary"></p>
+                                <div class="research-insights" id="researchInsights"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
