@@ -163,7 +163,7 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 8rem 0 6rem;
+    padding: 6rem 0 4rem;
     background: linear-gradient(135deg, 
         rgba(59, 130, 246, 0.05) 0%, 
         rgba(139, 92, 246, 0.05) 25%,
@@ -193,19 +193,18 @@ body {
     margin: 0 auto;
     padding: 0 1.5rem;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
-/* Medical Hero Visual Styling */
-.medical-hero-visual {
-    position: relative;
-    margin-bottom: 2rem;
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-/* Medical Hero Image Styling */
 .medical-hero-image {
     position: relative;
     border-radius: 24px;
@@ -214,6 +213,7 @@ body {
     line-height: 0;
     font-size: 0;
     height: 100%;
+    min-height: 450px;
 }
 
 .hero-medical-img {
@@ -446,10 +446,9 @@ body {
 }
 
 .hero-title {
-    font-size: 3rem;
+    font-size: 2.75rem;
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
+    line-height: 1.2;
     color: var(--text-dark);
 }
 
@@ -462,16 +461,14 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--neutral-gray);
-    margin-bottom: 2rem;
     line-height: 1.7;
 }
 
 .hero-actions {
     display: flex;
     gap: 1rem;
-    margin-bottom: 3rem;
 }
 
 /* AI Interface in Hero */
@@ -581,27 +578,30 @@ body {
 
 .hero-stats {
     display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
+    gap: 2.5rem;
+    flex-wrap: wrap;
 }
 
-.stat {
-    text-align: center;
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .stat-number {
-    display: block;
     font-size: 2rem;
-    font-weight: 700;
-    background: var(--gradient-secondary);
+    font-weight: 800;
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.2;
 }
 
 .stat-label {
     font-size: 0.9rem;
     color: var(--neutral-gray);
+    font-weight: 500;
 }
 
 /* AI Interface Demo */
