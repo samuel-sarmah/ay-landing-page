@@ -735,10 +735,10 @@ body {
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     border: 1px solid rgba(0, 102, 204, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
     overflow: hidden;
-    will-change: transform;
+    transform: translateZ(0);
 }
 
 .feature-card::before {
@@ -754,9 +754,8 @@ body {
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
+    transform: translate3d(0, -2px, 0);
     box-shadow: var(--shadow-lg);
-    border-color: var(--medical-teal);
 }
 
 .feature-card:hover::before {
@@ -1754,6 +1753,25 @@ img {
 .trust-img {
     background-color: #f0f9ff;
     background-image: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+/* Performance optimizations for scrolling */
+.feature-card,
+.trust-item {
+    contain: layout style paint;
+}
+
+/* Reduce animations on scroll for better performance */
+@media (prefers-reduced-motion: reduce) {
+    .feature-card,
+    .hero-medical-img,
+    .feature-img {
+        transition: none;
+    }
+    
+    .feature-card:hover {
+        transform: none;
+    }
 }
 
 /* Animation and Scroll Effects */

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigationEffects();
     initAnimations();
     initAIInterface();
+    initImageOptimization();
 });
 
 // Smooth scroll effects and navigation highlighting
@@ -44,11 +45,17 @@ function initScrollEffects() {
         }
     }
 
-    // Scroll event listeners
+    // Throttled scroll event listeners for better performance
+    let scrollTimer;
     window.addEventListener('scroll', () => {
-        highlightActiveNav();
-        updateNavBackground();
-    });
+        if (scrollTimer) {
+            cancelAnimationFrame(scrollTimer);
+        }
+        scrollTimer = requestAnimationFrame(() => {
+            highlightActiveNav();
+            updateNavBackground();
+        });
+    }, { passive: true });
 
     // Smooth scroll for navigation links
     navLinks.forEach(link => {
@@ -456,5 +463,48 @@ function initAIInterface() {
             handleQuerySubmit();
         }
     });
+}
+
+// Image optimization for better scroll performance
+function initImageOptimization() {
+    // Use Intersection Observer for intelligent image loading
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+    });
+
+    // Observe all lazy-loaded images
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        imageObserver.observe(img);
+    });
+
+    // Throttled scroll for better performance
+    let scrollTimeout;
+    const originalScrollHandler = window.onscroll;
+    
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            cancelAnimationFrame(scrollTimeout);
+        }
+        
+        scrollTimeout = requestAnimationFrame(() => {
+            // Only run scroll handlers if necessary
+            if (typeof originalScrollHandler === 'function') {
+                originalScrollHandler();
+            }
+        });
+    }, { passive: true });
 }
 
